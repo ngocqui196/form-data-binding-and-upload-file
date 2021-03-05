@@ -50,7 +50,7 @@ public class EmployeeController {
         Employee employee1 = new Employee(employee.getId(), employee.getName(), employee.getAddress(),avatar);
         employeeService.save(employee1);
         ModelAndView modelAndView = new ModelAndView("create");
-        modelAndView.addObject( "s",new EmployeeForm() );
+        modelAndView.addObject( "employee",new EmployeeForm() );
 
         return modelAndView;
     }

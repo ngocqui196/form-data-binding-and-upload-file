@@ -6,12 +6,12 @@
 </head>
 <body>
     <h3>Welcome, Enter the Employee Details</h3>
-    <h4 th:fragment="home"><a th:href="@{/customers}">Comback List Customer</a></h4>
+    <h4 th:fragment="home"><a th:href="@{/employees}">Comback List Employees</a></h4>
     <div th:if="${mess}">
         <span th:text="${mess}"></span>
     </div>
 
-    <form th:action="@{/employees/create}" th:object="${employee}" method="post">
+    <form th:action="@{/employees/create}" th:object="${employee}" method="post" enctype="multipart/form-data">
         <th:table>
             <tr>
                 <td>Name :</td>
@@ -20,6 +20,10 @@
             <tr>
                 <td>Address :</td>
                 <td><input th:field="*{address}"></td>
+            </tr>
+
+            <tr>
+                <td><input type="file" th:field="*{avatar}"></td>
             </tr>
             <input type="submit" value="Tạo mới">
         </th:table>
