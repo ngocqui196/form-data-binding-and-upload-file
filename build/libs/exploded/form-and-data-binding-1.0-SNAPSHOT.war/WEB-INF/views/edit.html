@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+
+<h1>Edit Employee</h1>
+<h4 th:replace="/create:: home"></h4>
+<form th:action="@{/employees/edit}" th:object="${employee}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <th:table>
+        <tr>
+            <td>Name :</td>
+            <td><input th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Address :</td>
+            <td><input th:field="*{address}"></td>
+        </tr>
+        <input type="submit" value="Cập nhật">
+    </th:table>
+
+
+</form>
+</body>
+</html>

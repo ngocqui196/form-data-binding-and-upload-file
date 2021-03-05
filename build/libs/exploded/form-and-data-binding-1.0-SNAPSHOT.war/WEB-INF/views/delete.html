@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Employee</title>
+</head>
+<body>
+<h1>Delete Customer</h1>
+<h4 th:replace="/create:: home"></h4>
+
+<form th:action="@{/employees/delete}" th:object="${employee}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <th:table>
+        <tr>
+            <td>Name :</td>
+            <td><input type="text" th:field="*{name}"></td>
+        </tr>
+        <tr>
+            <td>email :</td>
+            <td><input type="text" th:field="*{email}"></td>
+        </tr>
+        <tr>
+            <td>Address :</td>
+            <td><input type="text" th:field="*{address}"></td>
+        </tr>
+        <h5 style="color: red">Bạn thực sự muốn xoá</h5>
+
+        <input type="submit" value="Xoá">
+    </th:table>
+
+
+</form>
+
+</body>
+</html>
